@@ -58,6 +58,9 @@ artifacts:
       - ${SHORT_SHA}_test_log.xml
 # [END cloudbuild_python_logs_yaml]
 # Store images in Google Artifact Registry 
+substitutions:
+  _ARTIFACT_REGISTRY_REPO : "my-test-ar"
+  _BUCKET_NAME : "my-test-ar-bucket"
 images:
   - us-central1-docker.pkg.dev/${PROJECT_ID}/${_ARTIFACT_REGISTRY_REPO}/myimage:${SHORT_SHA}
 # [END cloudbuild_python_yaml]
